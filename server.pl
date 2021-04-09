@@ -8,6 +8,15 @@
 % Load web app modules.
 :- [app/init].
 
+% Serve static files for each web app module.
+:- http_handler('/static', serve_static, [prefix]).
+
+serve_static(Request) :-
+    http_reply_from_files('app/static/app', [], Request).
+
+serve_static(Request) :-
+    http_404([], Request).
+
 % Predicate to start the server.
 serve(Port) :-
     http_server(http_dispatch, [port(Port)]).
