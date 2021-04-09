@@ -1,8 +1,9 @@
 % Configures the web app.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-% Import HTTP modules.
+% Import required HTTP modules.
 :- use_module(library(http/thread_httpd)).
+:- use_module(library(http/http_files)).
 :- use_module(library(http/http_dispatch)).
 
 % Load web app modules.

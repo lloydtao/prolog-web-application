@@ -1,13 +1,8 @@
 % Generates web responses.
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-% Import required web modules 
-:- use_module(library(http/thread_httpd)).
-:- use_module(library(http/html_head)).
+% Import required HTTP module.
 :- use_module(library(http/html_write)).
-:- use_module(library(http/http_dispatch)).
-:- use_module(library(http/http_error)).
-:- use_module(library(http/http_files)).
 
 index(_Request) :-
 	reply_html_page(
